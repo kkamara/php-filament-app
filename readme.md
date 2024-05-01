@@ -2,9 +2,9 @@
 
 <img src="https://github.com/kkamara/useful/blob/main/php-reactjs-boilerplate2.png?raw=true" alt="php-reactjs-boilerplate2.png" width=""/>
 
-# PHP Reactjs Boilerplate [![API](https://github.com/kkamara/php-reactjs-boilerplate/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/php-reactjs-boilerplate/actions/workflows/build.yml)
+# PHP Filament App [![API](https://github.com/kkamara/php-filament-app/actions/workflows/build.yml/badge.svg)](https://github.com/kkamara/php-filament-app/actions/workflows/build.yml)
 
-(2021) A Laravel 11.x boilerplate with Reactjs Redux.
+
 
 * [Using Thunder Client?](#thunder-client)
 

@@ -1,5 +1,5 @@
 {
-    "name": "kkamara/php-reactjs-boilerplate",
+    "name": "kkamara/php-filament-app",
     "authors": [
         {
             "name": "Kelvin Kamara",
@@ -7,17 +7,10 @@
             "homepage": "https://kelvinkamara.com"
         }
     ],
-    "version": "2.0.0",
+    "version": "0.1.0",
     "type": "project",    
-    "description": "(2021) A Laravel 11.x boilerplate with Reactjs Redux.",
-    "keywords": [
-        "web",
-        "web-app",
-        "api",
-        "reactjs",
-        "tests",
-        "testing"
-    ],
+    "description": "",
+    "keywords": [],
     "license": "MIT",
     "require": {
         "php": "^8.2",
