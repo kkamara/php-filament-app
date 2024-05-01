@@ -93,8 +93,7 @@ export const register = data => {
       })
     }, error => {
       const message = error.response.data[0] ||
-        error.response.data.first_name[0] ||
-        error.response.data.last_name[0] ||
+        error.response.data.name[0] ||
         error.response.data.email[0] ||
         error.response.data.password[0] ||
         error.response.data.password_confirmation[0]
