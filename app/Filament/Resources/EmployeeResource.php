@@ -54,7 +54,7 @@ class EmployeeResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('date_hired')
                     ->required(),
-            ]);
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table
