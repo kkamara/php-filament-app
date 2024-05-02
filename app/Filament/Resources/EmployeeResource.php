@@ -47,7 +47,7 @@ class EmployeeResource extends Resource
                         Forms\Components\TextInput::make('middle_name')
                             ->required()
                             ->maxLength(255),
-                    ]),
+                    ])->columns(3),
                 Forms\Components\TextInput::make('address')
                     ->required()
                     ->maxLength(255),
