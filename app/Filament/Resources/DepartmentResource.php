@@ -25,6 +25,8 @@ class DepartmentResource extends Resource
     // Add resource to navigation group
     protected static ?string $navigationGroup = "System Management";
 
+    protected static ?int $navigationSort = 4;
+
     public static function form(Form $form): Form
     {
         return $form
