@@ -16,10 +16,12 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class CountryResource extends Resource
 {
     protected static ?string $model = Country::class;
-
+    // Update icon in navigation
     protected static ?string $navigationIcon = 'heroicon-o-flag';
-
+    // Update name in navigation
     protected static ?string $navigationLabel = "Country";
+    // Update name in resource page
+    protected static ?string $modelLabel = "Employees Country";
 
     public static function form(Form $form): Form
     {
