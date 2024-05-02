@@ -16,8 +16,14 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class CityResource extends Resource
 {
     protected static ?string $model = City::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    // Update icon in navigation
+    protected static ?string $navigationIcon = 'heroicon-o-flag';
+    // Update name in navigation
+    protected static ?string $navigationLabel = "City";
+    // Update name in resource page
+    protected static ?string $modelLabel = "City";
+    // Add resource to navigation group
+    protected static ?string $navigationGroup = "System Management";
 
     public static function form(Form $form): Form
     {
