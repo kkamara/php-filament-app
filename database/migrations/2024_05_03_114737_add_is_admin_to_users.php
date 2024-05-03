@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('countries', function (Blueprint $table) {
-            $table->id();
-            $table->string("name");
-            $table->char("code");
-            $table->char("phonecode");
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('is_admin')->default(false)->after('email');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('countries');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('is_admin');
+        });
     }
 };
