@@ -62,6 +62,7 @@ class StateResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->defaultSort("country.name", "asc")
             ->filters([
                 //
             ])
