@@ -54,6 +54,8 @@ class StateResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->label("State Name")
                     ->sortable()
+                    ->hidden(!auth()->user()->email === "admin@doe.com")
+                    ->visible(true)
                     ->searchable(isIndividual: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
