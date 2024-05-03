@@ -31,11 +31,10 @@ class StateResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('status')
-                    ->options([
-                        "active" => "Active",
-                        "inactive" => "Inactive",
-                    ])
+                Forms\Components\Select::make('country_id')
+                    ->relationship(name: "country", titleAttribute: "name")
+                    ->searchable()
+                    ->preload()
                     ->native(false)
                     ->required(),
                 Forms\Components\TextInput::make('name')
