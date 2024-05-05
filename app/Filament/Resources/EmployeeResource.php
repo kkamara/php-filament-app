@@ -48,6 +48,13 @@ class EmployeeResource extends Resource
             "first_name", "last_name", "middle_name", 
         ];
     }
+    // Add global search result details
+    public static function getGlobalSearchResultDetails(Model $record): array
+    {
+        return [
+            "Country" => $record->country->name,
+        ];
+    }
 
     public static function form(Form $form): Form
     {
