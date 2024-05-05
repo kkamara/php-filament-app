@@ -55,6 +55,12 @@ class EmployeeResource extends Resource
             "Country" => $record->country->name,
         ];
     }
+    // Add eager-loadin for relationships in global search
+    public static function getGlobalSearchEloquentQuery(): Builder
+    {
+        return parent::getGlobalSearchEloquentQuery()
+            ->with(["country"]);
+    }
 
     public static function form(Form $form): Form
     {
