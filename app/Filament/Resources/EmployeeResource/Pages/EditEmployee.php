@@ -5,6 +5,7 @@ namespace App\Filament\Resources\EmployeeResource\Pages;
 use App\Filament\Resources\EmployeeResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use \Filament\Notifications\Notification;
 
 class EditEmployee extends EditRecord
 {
@@ -16,5 +17,13 @@ class EditEmployee extends EditRecord
             Actions\ViewAction::make(),
             Actions\DeleteAction::make(),
         ];
+    }
+
+    protected function getSavedNotification(): Notification|null
+    {
+        return Notification::make()
+            ->success()
+            ->title("Employee saved.")
+            ->body("The Employee was updated succesfully.");
     }
 }
