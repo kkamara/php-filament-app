@@ -65,6 +65,11 @@ class EmployeeResource extends Resource
     public static function getNavigationBadge(): ?string {
         return static::getModel()::count();
     }
+    // Add navigation badge colour
+    public static function getNavigationBadgeColor(): string|array|null
+    {
+        return "info";
+    }
 
     public static function form(Form $form): Form
     {
