@@ -12,6 +12,9 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Infolist;
 
 class CityResource extends Resource
 {
@@ -72,6 +75,19 @@ class CityResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ]);
+    }
+
+    public static function infolist(Infolist $infolist): InfoList {
+        return $infolist
+            ->schema([
+                Section::make("City Information")
+                    ->schema([
+                        TextEntry::make('state.name')
+                            ->label("State Name"),
+                        TextEntry::make('name')
+                            ->label("City Name"),  
+                    ]) ->columns(2) 
             ]);
     }
 
