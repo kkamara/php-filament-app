@@ -11,6 +11,8 @@ class UserAdminChart extends ChartWidget
 {
     protected static ?string $heading = 'Users Chart';
 
+    protected static ?int $sort = 2;
+
     protected function getData(): array
     {
         $data = Trend::model(User::class)
