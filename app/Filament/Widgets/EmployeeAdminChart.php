@@ -2,7 +2,10 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\Employee;
 use Filament\Widgets\ChartWidget;
+use Flowframe\Trend\Trend;
+use Flowframe\Trend\TrendValue;
 
 class EmployeeAdminChart extends ChartWidget
 {
@@ -12,14 +15,22 @@ class EmployeeAdminChart extends ChartWidget
 
     protected function getData(): array
     {
+        $data = Trend::model(Employee::class)
+            ->between(
+                start: now()->startOfMonth(),
+                end: now()->endOfMonth(),
+            )
+            ->perDay()
+            ->count();
+    
         return [
             'datasets' => [
                 [
-                    'label' => 'Blog posts created',
-                    'data' => [0, 10, 5, 2, 21, 32, 45, 74, 65, 45, 77, 89],
+                    'label' => 'Employees',
+                    'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],
-            'labels' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            'labels' => $data->map(fn (TrendValue $value) => $value->date),
         ];
     }
 
