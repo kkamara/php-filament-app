@@ -87,7 +87,7 @@ class CityResource extends Resource
                             ->label("State Name"),
                         TextEntry::make('name')
                             ->label("City Name"),
-                    ]) ->columns(2) 
+                    ]) ->columns(2)
             ]);
     }
 

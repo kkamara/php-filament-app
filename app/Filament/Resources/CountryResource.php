@@ -87,7 +87,7 @@ class CountryResource extends Resource
                             ->label("Country Code"),
                         TextEntry::make('phonecode')
                             ->label("Phone Code"),
-                    ]) ->columns(2) 
+                    ]) ->columns(2)
             ]);
     }
 

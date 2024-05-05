@@ -12,6 +12,10 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Infolist;
+use Illuminate\Database\Eloquent\Model;
 
 class DepartmentResource extends Resource
 {
@@ -65,6 +69,20 @@ class DepartmentResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ]);
+    }
+
+    public static function infolist(Infolist $infolist): InfoList {
+        return $infolist
+            ->schema([
+                Section::make("Department Information")
+                    ->schema([
+                        TextEntry::make('name'),
+                        TextEntry::make('employees_count')
+                            ->state(function (Model $record): float {
+                                return $record->employees()->count();
+                            }),
+                    ]) ->columns(2)
             ]);
     }
 
