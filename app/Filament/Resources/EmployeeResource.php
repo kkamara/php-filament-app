@@ -27,6 +27,7 @@ use Filament\Tables\Filters\Filter;
 use Illuminate\Support\Carbon;
 use Filament\Tables\Filters\Indicator;
 use Filament\Tables\Enums\FiltersLayout;
+use Filament\Notifications\Notification;
 
 class EmployeeResource extends Resource
 {
@@ -257,8 +258,11 @@ class EmployeeResource extends Resource
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
-                    ->successNotificationTitle(
-                        "Employee deleted."
+                    ->successNotification(
+                        Notification::make()
+                            ->success()
+                            ->title("Employee deleted.")
+                            ->body("The Employee was deleted succesfully.")
                     ),
             ])
             ->bulkActions([
