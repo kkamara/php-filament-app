@@ -41,6 +41,13 @@ class EmployeeResource extends Resource
     public static function getGlobalSearchResultTitle(Model $record): string {
         return $record->last_name;
     }
+    // Add attributes to search globally by
+    public static function getGloballySearchableAttributes(): array
+    {
+        return [
+            "first_name", "last_name", "middle_name", 
+        ];
+    }
 
     public static function form(Form $form): Form
     {
