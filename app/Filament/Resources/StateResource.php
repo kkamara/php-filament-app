@@ -7,11 +7,13 @@ use App\Filament\Resources\StateResource\RelationManagers;
 use App\Models\State;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Infolists\Components\TextEntry;
 
 class StateResource extends Resource
 {
@@ -78,6 +80,16 @@ class StateResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ]);
+    }
+
+    public static function infolist(Infolist $infolist): InfoList {
+        return $infolist
+            ->schema([
+                TextEntry::make('country.name')
+                    ->label("Country Name"),
+                TextEntry::make('name')
+                    ->label("State Name"),    
             ]);
     }
 
