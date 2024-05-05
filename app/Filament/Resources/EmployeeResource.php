@@ -61,6 +61,10 @@ class EmployeeResource extends Resource
         return parent::getGlobalSearchEloquentQuery()
             ->with(["country"]);
     }
+    // Add navigation badge for Employees Screen
+    public static function getNavigationBadge(): ?string {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {
